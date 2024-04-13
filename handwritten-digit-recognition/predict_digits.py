@@ -44,4 +44,9 @@ print(
     f"{metrics.classification_report(y_test, predicted)}\n"
 )
 
+# Confusion Matrix
+disp = metrics.ConfusionMatrixDisplay.from_predictions(y_test, predicted)
+disp.figure_.suptitle("Confusion Matrix")
+print(f"Cofusion Matrix:\n{disp.confusion_matrix}")
+
 plt.show()
